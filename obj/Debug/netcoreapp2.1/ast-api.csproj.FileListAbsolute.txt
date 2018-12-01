@@ -1,0 +1,14 @@
+D:\Projetos\Animais sem teto\ast-api\bin\Debug\netcoreapp2.1\ast-api.deps.json
+D:\Projetos\Animais sem teto\ast-api\bin\Debug\netcoreapp2.1\ast-api.runtimeconfig.json
+D:\Projetos\Animais sem teto\ast-api\bin\Debug\netcoreapp2.1\ast-api.runtimeconfig.dev.json
+D:\Projetos\Animais sem teto\ast-api\bin\Debug\netcoreapp2.1\ast-api.dll
+D:\Projetos\Animais sem teto\ast-api\bin\Debug\netcoreapp2.1\ast-api.pdb
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.csprojAssemblyReference.cache
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.csproj.CoreCompileInputs.cache
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.RazorAssemblyInfo.cache
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.RazorAssemblyInfo.cs
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.AssemblyInfoInputs.cache
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.AssemblyInfo.cs
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.RazorTargetAssemblyInfo.cache
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.dll
+D:\Projetos\Animais sem teto\ast-api\obj\Debug\netcoreapp2.1\ast-api.pdb

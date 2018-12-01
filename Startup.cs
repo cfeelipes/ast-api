@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ast_api.Contexts;
+using ast_api.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,9 @@ namespace ast_api
                 options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
                 options.Database = Configuration.GetSection("MongoDb:Database").Value;
             });
+
+            services.AddTransient<IAnimalContext, AnimalContext>();
+            services.AddTransient<IAnimalRepository, AnimalRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12964,7 +12964,7 @@
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
-      "MongoDB.Driver"
+      "MongoDB.Driver >= 2.7.2"
     ]
   },
   "packageFolders": {
@@ -12984,12 +12984,14 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Carlos Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Carlos Felipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13024,7 +13026,7 @@
           },
           "MongoDB.Driver": {
             "target": "Package",
-            "version": "(, )"
+            "version": "[2.7.2, )"
           }
         },
         "imports": [
