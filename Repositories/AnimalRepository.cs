@@ -24,16 +24,16 @@ namespace ast_api.Repositories
                             .ToListAsync();
         }
 
-        public Task<Animal> RecuperarAnimal(string nome) 
+        public Task<Animal> RecuperarAnimal(string id) 
         {
-            FilterDefinition<Animal> filter = Builders<Animal>.Filter.Eq(m => m.Nome, nome);
+            FilterDefinition<Animal> filter = Builders<Animal>.Filter.Eq(m => m.Id, ObjectId.Parse(id));
             return _context
                 .Animais
                 .Find(filter)
                 .FirstOrDefaultAsync();
         }
 
-        public async Task InserirAnimal(Animal animal)
+        public async Task CriarAnimal(Animal animal)
         {
             await _context.Animais.InsertOneAsync(animal);
         }
@@ -50,9 +50,9 @@ namespace ast_api.Repositories
             return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
         }
 
-        public async Task<bool> DeletarAnimal(string nome)
+        public async Task<bool> DeletarAnimal(string id)
         {
-            FilterDefinition<Animal> filter = Builders<Animal>.Filter.Eq(m => m.Nome, nome);
+            FilterDefinition<Animal> filter = Builders<Animal>.Filter.Eq(m => m.Id, ObjectId.Parse(id));
             DeleteResult deleteResult = await _context
                                                 .Animais
                                                 .DeleteOneAsync(filter);

@@ -1,12 +1,14 @@
 using System.Threading.Tasks;
 using ast_api.Models;
 using ast_api.Repositories;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ast_api.Controllers
 {
     [Produces("application/json")]
     [Route("api/Animal")]
+    [EnableCors("MyPolicy")]
     public class AnimalController : Controller
     {
         private readonly IAnimalRepository _animalRepository;
@@ -17,16 +19,16 @@ namespace ast_api.Controllers
         
         // GET: api/Animal
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> ListarAnimais()
         {
             return new ObjectResult(await _animalRepository.ListarAnimais());
         }
 
-        // GET: api/Animal/nome
-        [HttpGet("{name}", Name = "Get")]
-        public async Task<IActionResult> Get(string nome)
+        // GET: api/Animal/5c02ae24b7bfc11b24458801
+        [HttpGet("{id}")]
+        public async Task<IActionResult> RecuperarAnimal(string id)
         {
-            var animal = await _animalRepository.RecuperarAnimal(nome);
+            var animal = await _animalRepository.RecuperarAnimal(id);
             
             if (animal == null)
                 return new NotFoundResult();
@@ -36,20 +38,20 @@ namespace ast_api.Controllers
 
         // POST: api/Animal
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Animal animal)
+        public async Task<IActionResult> CriarAnimal([FromBody]Animal animal)
         {
             if (animal == null)
                 return new NotFoundResult();
 
-            await _animalRepository.InserirAnimal(animal);
+            await _animalRepository.CriarAnimal(animal);
             return new OkObjectResult(animal);
         }
 
-        // PUT: api/Animal/5
+        // PUT: api/Animal/5c02ae24b7bfc11b24458801
         [HttpPut("{name}")]
-        public async Task<IActionResult> Put(string nome, [FromBody]Animal animal)
+        public async Task<IActionResult> AlterarAnimal(string id, [FromBody]Animal animal)
         {
-            var animalFromDb = await _animalRepository.RecuperarAnimal(nome);
+            var animalFromDb = await _animalRepository.RecuperarAnimal(id);
             
             if (animalFromDb == null)
                 return new NotFoundResult();
@@ -59,16 +61,16 @@ namespace ast_api.Controllers
             return new OkObjectResult(animal);
         }
 
-        // DELETE: api/Animal/5
+        // DELETE: api/Animal/5c02ae24b7bfc11b24458801
         [HttpDelete("{nome}")]
-        public async Task<IActionResult> DeletarAnimal(string nome)
+        public async Task<IActionResult> DeletarAnimal(string id)
         {
-            var animalFromDb = await _animalRepository.RecuperarAnimal(nome);
+            var animalFromDb = await _animalRepository.RecuperarAnimal(id);
 
             if (animalFromDb == null)
                 return new NotFoundResult();
 
-            await _animalRepository.DeletarAnimal(nome);
+            await _animalRepository.DeletarAnimal(id);
             return new OkResult();
         }
     }

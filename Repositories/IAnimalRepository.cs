@@ -8,7 +8,7 @@ namespace ast_api.Repositories
     {
         Task<IEnumerable<Animal>> ListarAnimais();
         Task<Animal> RecuperarAnimal(string name);
-        Task InserirAnimal(Animal animal);
+        Task CriarAnimal(Animal animal);
         Task<bool> AlterarAnimal(Animal animal);
         Task<bool> DeletarAnimal(string name);
     }
