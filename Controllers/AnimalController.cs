@@ -48,7 +48,7 @@ namespace ast_api.Controllers
         }
 
         // PUT: api/Animal/5c02ae24b7bfc11b24458801
-        [HttpPut("{name}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> AlterarAnimal(string id, [FromBody]Animal animal)
         {
             var animalFromDb = await _animalRepository.RecuperarAnimal(id);
@@ -62,7 +62,7 @@ namespace ast_api.Controllers
         }
 
         // DELETE: api/Animal/5c02ae24b7bfc11b24458801
-        [HttpDelete("{nome}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeletarAnimal(string id)
         {
             var animalFromDb = await _animalRepository.RecuperarAnimal(id);
